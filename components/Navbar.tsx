@@ -1,14 +1,14 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Logo, { LogoMobile } from "@/components/Logo";
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
-import { Button, buttonVariants } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
-import { UserButton } from '@clerk/nextjs';
-import { ThemeSwitcherBtn } from '@/components/ThemeSwitcherBtn';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu } from 'lucide-react';
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { UserButton } from "@clerk/nextjs";
+import { ThemeSwitcherBtn } from "@/components/ThemeSwitcherBtn";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
 
 function Navbar() {
   return (
@@ -16,14 +16,14 @@ function Navbar() {
       <DesktopNavbar />
       <MobileNavbar />
     </>
-  )
+  );
 }
 
 const items = [
   { label: "Dashboard", link: "/" },
   { label: "Transactions", link: "/transactions" },
   { label: "Manage", link: "/manage" },
-]
+];
 
 function MobileNavbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +41,7 @@ function MobileNavbar() {
             <Logo />
             <div className="flex flex-col gap-1 pt-4">
               {items.map((item) => (
-                <NavbarItem 
+                <NavbarItem
                   key={item.label}
                   link={item.link}
                   label={item.label}
@@ -60,7 +60,7 @@ function MobileNavbar() {
         </div>
       </nav>
     </div>
-  )
+  );
 }
 
 function DesktopNavbar() {
@@ -70,12 +70,8 @@ function DesktopNavbar() {
         <div className="flex h-[80px] min-h-[60px] items-center gap-x-4">
           <Logo />
           <div className="flex h-full">
-            {items.map(item => (
-              <NavbarItem
-                key={item.label}
-                link={item.link}
-                label={item.label}
-              />
+            {items.map((item) => (
+              <NavbarItem key={item.label} link={item.link} label={item.label} />
             ))}
           </div>
         </div>
@@ -85,23 +81,21 @@ function DesktopNavbar() {
         </div>
       </nav>
     </div>
-  )
+  );
 }
 
-function NavbarItem({link, label, clickCallback}: {
-  link: string;
-  label: string;
-  clickCallback?: () => void;
-}) {
+function NavbarItem({ link, label, clickCallback }: { link: string; label: string; clickCallback?: () => void }) {
   const pathname = usePathname();
   const isActive = pathname === link;
 
   return (
     <div className="relative flex items-center">
-      <Link href={link} className={cn(
-        buttonVariants({ variant: "ghost" }),
-        "w-full justify-start text-lg text-muted-foreground hover:text-foreground",
-        isActive && "text-foreground"
+      <Link
+        href={link}
+        className={cn(
+          buttonVariants({ variant: "ghost" }),
+          "w-full justify-start text-lg text-muted-foreground hover:text-foreground",
+          isActive && "text-foreground"
         )}
         onClick={() => {
           if (clickCallback) clickCallback();
@@ -109,14 +103,14 @@ function NavbarItem({link, label, clickCallback}: {
       >
         {label}
       </Link>
-      {
-        isActive && (
-          <div className="absolute -bottom-[2px] left-1/2 hidden h-[2px] 
-          w-[80%] -translate-x-1/2 rounded-x1 bg-foreground md:block" />
-        )
-      }
+      {isActive && (
+        <div
+          className="absolute -bottom-[2px] left-1/2 hidden h-[2px] 
+          w-[80%] -translate-x-1/2 rounded-x1 bg-foreground md:block"
+        />
+      )}
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react'
-import { Skeleton } from '@/components/ui/skeleton';
-import { cn } from '@/lib/utils';
+import React, { ReactNode } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
+import { cn } from "@/lib/utils";
 
 function SkeletonWrapper({
   children,
@@ -17,7 +17,7 @@ function SkeletonWrapper({
     <Skeleton className={cn(fullWidth && "w-full")}>
       <div className="opacity-0">{children}</div>
     </Skeleton>
-  )
+  );
 }
 
-export default SkeletonWrapper
+export default SkeletonWrapper;

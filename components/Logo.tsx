@@ -1,5 +1,5 @@
-import { PiggyBank } from 'lucide-react'
-import React from 'react'
+import { PiggyBank } from "lucide-react";
+import React from "react";
 
 function Logo() {
   return (
@@ -9,7 +9,7 @@ function Logo() {
         BudgetTracker
       </p>
     </a>
-  )
+  );
 }
 
 export function LogoMobile() {
@@ -19,7 +19,7 @@ export function LogoMobile() {
         BudgetTracker
       </p>
     </a>
-  )
+  );
 }
 
-export default Logo
+export default Logo;
