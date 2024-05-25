@@ -21,7 +21,7 @@ async function page() {
           Welcome, <span className="ml-2 font-bold">{user.firstName}! 👋</span>
         </h1>
         <h2 className="mt-4 text-center text-base text-muted-foreground">
-          Let's get started by setting up your currency
+          Let&apos;s get started by setting up your currency
         </h2>
         <h3 className="mt-2 text-center text-sm text-muted-foreground">
           You can change these settings at any time
@@ -42,7 +42,7 @@ async function page() {
       <Separator />
       <Button className="w-full" asChild>
         <Link href={"/"}>
-          I'm done! Take me to the dashboard
+          I&apos;m done! Take me to the dashboard
         </Link>
       </Button>
       <div className="mt-8">
