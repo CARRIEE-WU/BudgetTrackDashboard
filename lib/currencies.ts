@@ -4,6 +4,6 @@ export const Currencies = [
   { value: "JPY", label: "¥ Yen", locale: "ja-JP" },
   { value: "KRW", label: "₩ Won", locale: "ko-KR" },
   { value: "EUR", label: "€ Euro", locale: "de-DE" },
-]
+];
 
 export type Currency = (typeof Currencies)[0];
